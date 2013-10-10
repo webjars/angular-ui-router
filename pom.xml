@@ -11,7 +11,7 @@
   <packaging>jar</packaging>
   <groupId>org.webjars</groupId>
   <artifactId>angular-ui-router</artifactId>
-  <version>0.2.0-SNAPSHOT</version>
+  <version>0.2.0</version>
   <name>Angular UI Router</name>
   <description>WebJar for Angular UI Router</description>
   <url>http://webjars.org</url>
@@ -28,7 +28,7 @@
     <url>http://github.com/webjars/anguar-ui-router</url>
     <connection>scm:git:https://github.com/webjars/anguar-ui-router.git</connection>
     <developerConnection>scm:git:https://github.com/webjars/anguar-ui-router.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>angular-ui-router-0.2.0</tag>
   </scm>
 
   <dependencies>
@@ -81,7 +81,7 @@
                 <echo message="moving resources" />
                 <move todir="${destDir}">
                   <fileset dir="${project.build.directory}/ui-router-${upstream.version}/release">
-                    <include name="*.js"/>
+                    <include name="*.js" />
                   </fileset>
                 </move>
               </target>
