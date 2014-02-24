@@ -11,7 +11,7 @@
   <packaging>jar</packaging>
   <groupId>org.webjars</groupId>
   <artifactId>angular-ui-router</artifactId>
-  <version>0.2.9-SNAPSHOT</version>
+  <version>0.2.8-1-SNAPSHOT</version>
   <name>Angular UI Router</name>
   <description>WebJar for Angular UI Router</description>
   <url>http://webjars.org</url>
@@ -101,7 +101,24 @@
           </dependency>
         </dependencies>
       </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.5.1</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>sonatype-nexus-staging</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
     </plugins>
+    <resources>
+      <resource>
+        <directory>${project.basedir}/src/main/resources</directory>
+        <targetPath>${destDir}</targetPath>
+      </resource>
+    </resources>
   </build>
 
 </project>
