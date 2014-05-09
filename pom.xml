@@ -11,10 +11,23 @@
   <packaging>jar</packaging>
   <groupId>org.webjars</groupId>
   <artifactId>angular-ui-router</artifactId>
-  <version>0.2.11-SNAPSHOT</version>
+  <version>0.2.10-1-SNAPSHOT</version>
   <name>Angular UI Router</name>
   <description>WebJar for Angular UI Router</description>
   <url>http://webjars.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <upstream.version>0.2.10</upstream.version>
+    <upstream.url>https://github.com/angular-ui/ui-router/archive</upstream.url>
+    <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+    <requirejs>
+        {
+            "paths": { "angular-ui-router": "angular-ui-router" },
+            "shim": { "angular-ui-router": [ "angular" ] }
+        }
+    </requirejs>
+  </properties>
 
   <licenses>
     <license>
@@ -35,16 +48,9 @@
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>angularjs</artifactId>
-      <version>1.2.6</version>
+      <version>1.2.16-2</version>
     </dependency>
   </dependencies>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <upstream.version>0.2.10</upstream.version>
-    <upstream.url>https://github.com/angular-ui/ui-router/archive</upstream.url>
-    <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
-  </properties>
 
   <build>
     <plugins>
